@@ -1,3 +1,3 @@
 # jboss-store-deployment
 
-oseDS
+storeDS
