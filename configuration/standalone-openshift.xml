@@ -134,6 +134,7 @@
         <subsystem xmlns="urn:jboss:domain:bean-validation:1.0"/>
         <subsystem xmlns="urn:jboss:domain:datasources:5.0">
             <datasources>
+<datasource jta="true" jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" use-java-context="true"> <connection-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</connection-url> <driver>h2</driver> <security> <user-name>sa</user-name> <password>sa</password> </security> </datasource
                 <xa-datasource jndi-name="java:jboss/datasources/storeDS" pool-name="eap_app_mysql-DB" use-java-context="true" enabled="true"> <xa-datasource-property name="DatabaseName">root</xa-datasource-property> <xa-datasource-property name="Port">3306</xa-datasource-property> <xa-datasource-property name="ServerName">192.168.223.130</xa-datasource-property> <driver>mysql</driver> <security> <user-name>userW4L</user-name> <password>d5EBnJUf</password> </security> <validation> <validate-on-match>true</validate-on-match> <background-validation>false</background-validation> <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLValidConnectionChecker"></valid-connection-checker> <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLExceptionSorter"></exception-sorter> </validation> </xa-datasource>
 <datasource jta="false" jndi-name="java:jboss/datasources/storeDSObjectStore" pool-name="eap_app_mysqlObjectStorePool" enabled="true"> <connection-url>jdbc:mysql://192.168.223.130:3306/demodb</connection-url> <driver>mysql</driver> <security> <user-name>demouser</user-name> <password>password</password> </security> </datasource>
                 <drivers>
@@ -146,7 +147,6 @@
                     <driver name="postgresql" module="org.postgresql">
                         <xa-datasource-class>org.postgresql.xa.PGXADataSource</xa-datasource-class>
                     </driver>
-                    <!-- ##DRIVERS## -->
                 </drivers>
 
             </datasources>
